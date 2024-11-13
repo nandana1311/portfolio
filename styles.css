@@ -1,0 +1,235 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--dark-bg);
+  color: var(--muted-text);
+}
+
+:root {
+  --dark-bg: #1a1a2e;
+  --dark-accent: #16213e;
+  --muted-text: #e1e1e1;
+  --highlight: #0f3460;
+  --soft-glow: #6a5acd;
+}
+
+header {
+  background-color: var(--dark-accent);
+  color: var(--muted-text);
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--muted-text);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--soft-glow);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--dark-accent);
+  border-radius: 10px;
+}
+
+.hero img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid;
+}
+
+.hero h1 {
+  margin: 1rem 0;
+  color: var(--muted-text);
+}
+
+.hero p {
+  color: #a0a0a0;
+}
+
+.section-title {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: var(--muted-text);
+
+}
+
+.section-title::after {
+ 
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 100px;
+  height: 3px;
+  background-color: var(--soft-glow);
+  transform: translateX(-50%);
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact-form {
+  background-color: var(--dark-accent);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--highlight);
+  border-radius: 4px;
+  background-color: var(--dark-bg);
+  color: var(--muted-text);
+}
+
+.contact-form button {
+  width: auto;
+  margin-top: 15px;
+  background-color: var(--soft-glow);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #5a4acd;
+}
+
+footer {
+  background-color: var(--dark-accent);
+  color: var(--muted-text);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.project {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 15px;
+  background-color: var(--dark-accent);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  color: var(--muted-text);
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  right: -80px;
+}
+.contact-info {
+  margin-bottom: 1rem;
+}
+
+
+.contact-icon {
+  color: var(--muted-text);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+}
+
+.contact-icon.email:hover {
+  color: #D44638; /* Gmail red */
+}
+
+.contact-icon.linkedin:hover {
+  color: #0077B5; /* LinkedIn blue */
+}
+
+/* Tooltip Styling */
+.contact-icon .contact-tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dark-accent);
+  color: var(--muted-text);
+  padding: 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  font-size: 0.8rem;
+}
+.contact-icon:hover .contact-tooltip {
+  visibility: visible;
+  opacity: 1;
+  bottom: -120%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .contact-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-icon .contact-tooltip {
+    bottom: -120%;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects,
+  .contact {
+    display: flex;
+    justify-content: center;
+  }
+}
